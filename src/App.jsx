@@ -4,15 +4,19 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Home from './pages/Home'
 import Header from './components/Header'
+import { ThemeContext } from './context/ThemeContext'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [theme, setTheme] = useState('dark')
 
   return (
-    <div className='App'>
-      <Header/>
-      <Home/>
-    </div>
+    <ThemeContext.Provider value={{theme, setTheme}}>
+      <div className={`${theme} ${theme =='dark'?'bg-[#121212] h-[100vh]':null}`}>
+        <Header/>
+        <Home/>
+      </div>
+    </ThemeContext.Provider>
   )
 }
 
