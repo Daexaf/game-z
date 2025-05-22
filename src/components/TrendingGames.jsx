@@ -20,7 +20,7 @@ function TrendingGames({ gameList }) {
                   className="h-[270px] rounded-t-lg object-cover"
                   alt=""
                 />
-                <h2 className="dark:text-white text-[20px] font-bold p-2">
+                <h2 className="dark:text-white text-[20px] font-bold p-3">
                   {item.name}
                 </h2>
               </div>
