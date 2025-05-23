@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import GlobalApi from "../services/GlobalApi";
 
-function GenreList() {
+function GenreList({ genreId, selectedGenresName }) {
   const [genreList, setGenreList] = useState([]);
   const [activeIndex, setActiveIndex] = useState(0);
+  // const [genresId, setGenresId] = useState();
   useEffect(() => {
     getGenreList();
   }, []);
@@ -17,6 +18,7 @@ function GenreList() {
         console.error("Error Fetching data:", error);
       });
   };
+
   return (
     <>
       <h2 className="text-[30px] font-bold dark:text-white">Genres</h2>
@@ -24,6 +26,8 @@ function GenreList() {
         <div
           onClick={() => {
             setActiveIndex(index);
+            genreId(item.id);
+            selectedGenresName(item.name);
           }}
           key={item.id}
           className={`flex gap-2 items-center mb-2 cursor-pointer hover:bg-gray-300 p-2 group rounded-lg hover:dark:bg-gray-600 ${

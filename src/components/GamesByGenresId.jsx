@@ -3,14 +3,14 @@ import { IoStarSharp } from "react-icons/io5";
 import { FaFire } from "react-icons/fa";
 import { GoCommentDiscussion } from "react-icons/go";
 
-function GamesByGenresId({ gameList }) {
+function GamesByGenresId({ gameList, selectedGenresName }) {
   useEffect(() => {
     console.log("GameList", gameList);
   }, []);
   return (
     <div className="">
       <h2 className="font-bold text-[30px] dark:text-white mt-5 gap-6">
-        Popular Games
+        {selectedGenresName} Games
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-5">
         {gameList.map((item, index) => (
