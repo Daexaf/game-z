@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Banner from "../components/Banner";
 import { useParams } from "react-router-dom";
 import GlobalApi from "../services/GlobalApi";
+import GamePlatform from "../components/GamePlatform";
 
 const DetailGame = () => {
   const { id } = useParams();
@@ -42,10 +43,11 @@ const DetailGame = () => {
               <strong>Genres:</strong>{" "}
               {game.genres.map((g) => g.name).join(", ")}
             </p>
-            <p>
+            <GamePlatform platforms={game.platforms} />
+            {/* <p>
               <strong>Platforms:</strong>{" "}
               {game.platforms.map((p) => p.platform.name).join(", ")}
-            </p>
+            </p> */}
           </div>
         </div>
       ) : (
