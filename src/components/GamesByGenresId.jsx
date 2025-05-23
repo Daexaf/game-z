@@ -4,9 +4,7 @@ import { FaFire } from "react-icons/fa";
 import { GoCommentDiscussion } from "react-icons/go";
 
 function GamesByGenresId({ gameList, selectedGenresName }) {
-  useEffect(() => {
-    console.log("GameList", gameList);
-  }, []);
+  useEffect(() => {}, []);
   return (
     <div className="">
       <h2 className="font-bold text-[30px] dark:text-white mt-5 gap-6">

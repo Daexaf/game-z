@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 
 function Banner({ gameBanner }) {
+  const navigate = useNavigate();
   useEffect(() => {}, []);
   return (
     <>
@@ -17,6 +19,7 @@ function Banner({ gameBanner }) {
               padding: "8px 16px",
               borderRadius: "6px",
             }}
+            onClick={() => navigate(`/game/${gameBanner.id}`)}
           >
             Get Now
           </button>

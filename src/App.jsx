@@ -5,6 +5,8 @@ import "./App.css";
 import Home from "./pages/Home";
 import Header from "./components/Header";
 import { ThemeContext } from "./context/ThemeContext";
+import DetailGame from "./pages/DetailGame";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -22,7 +24,10 @@ function App() {
         }`}
       >
         <Header />
-        <Home />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/game/:id" element={<DetailGame />} />
+        </Routes>
       </div>
     </ThemeContext.Provider>
   );

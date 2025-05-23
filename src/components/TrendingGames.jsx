@@ -1,9 +1,7 @@
 import React, { useEffect } from "react";
 
 function TrendingGames({ gameList }) {
-  useEffect(() => {
-    console.log(gameList);
-  }, []);
+  useEffect(() => {}, []);
   return (
     <div className="mt-5 hiddent md:block">
       <h2 className="font-bold text-[30px] dark:text-white">Trending Games</h2>
