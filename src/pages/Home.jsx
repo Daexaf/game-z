@@ -3,6 +3,7 @@ import GenreList from "../components/GenreList";
 import GlobalApi from "../services/GlobalApi";
 import Banner from "../components/Banner";
 import TrendingGames from "../components/TrendingGames";
+import GamesByGenresId from "../components/GamesByGenresId";
 
 const Home = () => {
   const [allGameList, setAllGameList] = useState();
@@ -26,6 +27,7 @@ const Home = () => {
           <div>
             <Banner gameBanner={allGameList[0]} />
             <TrendingGames gameList={allGameList} />
+            <GamesByGenresId gameList={allGameList} />
           </div>
         ) : null}
       </div>
